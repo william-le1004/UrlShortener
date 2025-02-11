@@ -6,6 +6,9 @@ using UrlShortener.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add User Secrets configuration
+builder.Configuration.AddUserSecrets<Program>();
+
 // Add services to the container.
 builder.Services.AddDbContext<UrlShortenerContext>(options =>
                  options.UseSqlServer(

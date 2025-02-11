@@ -39,7 +39,7 @@ public class UrlShortenService : IUrlShortenService
                 Id = new Guid(),
                 LongURL = request.URL,
                 Code = code,
-                ShortURL = $"{currentHttpContext}://{currentHost}/api/{code}",
+                ShortURL = $"https://{currentHost}/api/{code}",
                 Create_at = DateTime.Now
             };
             if (!await _context.urls.AnyAsync(x => x.Code == code))
